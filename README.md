@@ -9,6 +9,11 @@ sedimentology paper classification based on BERT
 
 测试数据范例：test_data.pkl
 
+Requirement:
+- python 3.8+
+- pytorch 1.12.0
+- transformers 4.20.0
+
 训练模型
 ```python
 python BERT_train.py
