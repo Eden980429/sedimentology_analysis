@@ -1,5 +1,5 @@
 # sedimentology_paper_analysis
-paper classification based on BERT
+sedimentology paper classification based on BERT
 
 本项目中的模型基于BERT模型，预训练模型使用pytorch中的[bert-base-uncased](https://huggingface.co/bert-base-uncased)模型，使用地学专家标注文献数据训练，可以识别地学文献中的沉积学学科文献，准确率为XX。
 
