@@ -5,7 +5,7 @@ paper classification based on BERT
 
 数据来源[Deep-Time Digital Earth](https://ddescholar.acemap.info/)
 
-所使用的训练数据格式示例可参考train_data.pkl文件
+训练数据格式示例可参考train_data.pkl文件
 测试数据范例：test_data.pkl
 
 训练模型
