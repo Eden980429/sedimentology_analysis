@@ -17,40 +17,6 @@ import random
 data preparation
 """
 
-index = "dde_deepdive"
-es = elasticsearch.Elasticsearch("10.10.10.10:9200", timeout=1000)
-
-def search_es_count(es,index,pids):   
-    query_json = {
-        "size" : 4000000,
-        "_source":{
-            "includes": [
-            ]
-        },
-        
-        'query': {
-                'bool': {                   
-                    "must": [{
-                                 "terms":{"am_id": pids}
-                             }
-                    ],
-                }
-            }
-
-    }
-    query = es.search(index=index, body=query_json)
-    
-    doc = []
-    ids = []
-    for item in query['hits']['hits']:
-        text = item['_source']['title'] + item['_source']['abstract']
-        doc.append(text)
-        ids.append(item['_source']['am_id'])
-        if len(text) < 50:
-            print(item['_source']['am_id'], '\n', text)
-    
-    return {'doc':doc,'pids':ids}
-
 def get_saved_id(filename):
     ids = []
     with open(filename, "r") as f:
@@ -72,7 +38,7 @@ def load_variable(filename):
   f.close()
   return r
 
-test=load_variable('dataset0817/test0817_3journal.pkl')
+test=load_variable('test_data.pkl')
 test_text=[]
 test_label=[]
 for i in test:
@@ -119,7 +85,7 @@ model = BertForAffiliationNameNormalization(2)
 model = nn.DataParallel(model, device_ids=[0,2,3])
 
 # 这里用你需要测试的checkpoint，一般为最后一个即可
-model=torch.load('checkpoint5/After_epoch_9_bert.pkl')
+model=torch.load('bert_parameter.pkl')
 
 tokenizer = BertTokenizerFast.from_pretrained('bert-base-uncased')
 
