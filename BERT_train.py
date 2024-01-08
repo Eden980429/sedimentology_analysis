@@ -34,7 +34,7 @@ data preparation
 # train/test/valid_text为标签，是沉积学：1，非沉积学：0
 # 按需求改这一部分
 
-train=load_variable('dataset0817/train0817.pkl')
+train=load_variable('train_data.pkl')
 train_texts=[]
 train_labels=[]
 for i in train:
@@ -43,14 +43,14 @@ for i in train:
 # print(train_labels)
 # print(train_texts)
 
-test=load_variable('dataset0817/test0815.pkl')
+test=load_variable('test_data.pkl')
 test_texts=[]
 test_labels=[]
 for i in test:
     test_labels.append(i[0])
     test_texts.append(i[1])
 
-valid=load_variable('dataset0817/test0815.pkl')
+valid=load_variable('test_data.pkl')
 valid_texts=[]
 valid_labels=[]
 for i in valid:
@@ -141,7 +141,7 @@ for epoch in range(20):
             
         #if i==1000:
             #torch.save(model, 'checkpoint3/epoch_' + str(epoch) + '_step_' + str(i) + '_bert.pkl')  
-    torch.save(model, 'checkpoint7/After_epoch_' + str(epoch) + '_bert.pkl')  
+    torch.save(model, 'checkpoint0/After_epoch_' + str(epoch) + '_bert.pkl')  
     
     avg_train_loss = total_train_loss / len(train_loader)
     print("avg_train_loss: ", avg_train_loss)
