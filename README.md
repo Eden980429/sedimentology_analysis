@@ -18,5 +18,7 @@ python BERT_train.py
 python BERT_eval.py
 ```
 
+模型参数文件：链接：<https://pan.baidu.com/s/18JhOZmOPpwcqLy2yhWDbyA> 提取码：ow4g
+
 测试输出为模型判定的沉积学文献对应的paper_id，根据paper_id可在数据库中调取对应的文献数据。
 
