@@ -6,6 +6,7 @@ sedimentology paper classification based on BERT
 数据来源[Deep-Time Digital Earth](https://ddescholar.acemap.info/)
 
 训练数据格式示例可参考train_data.pkl文件
+
 测试数据范例：test_data.pkl
 
 训练模型
@@ -16,7 +17,6 @@ python BERT_train.py
 ```python
 python BERT_eval.py
 ```
-训练数据集示例可参考文件：
 
-测试输出为文献对应的paper_id，根据paper_id可在数据库中调取对应的文献数据。
+测试输出为模型判定的沉积学文献对应的paper_id，根据paper_id可在数据库中调取对应的文献数据。
 
